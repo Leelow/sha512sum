@@ -1,7 +1,7 @@
 # sha512sum
 > The same behaviour as linux command with directories support. [https://linux.die.net/man/1/sha512sum](https://linux.die.net/man/1/sha512sum)
 
-Works Linux and Windows.
+Works on Linux and Windows.
 
 ## Install
 
