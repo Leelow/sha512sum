@@ -1,0 +1,16 @@
+/node_modules
+npm-debug.log
+
+.gitignore
+.appveyor.yml
+.travis.yml
+
+/.idea
+sha512sum.iml
+
+/coverage
+yolo.js
+
+README.md
+yarn.lock
+/test
