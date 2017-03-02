@@ -31,11 +31,11 @@ sha512sum.fromFile('/path/to/file', options, function(err, hash) {
   console.log(hash)
 });
 
-console.log(sha512sum.fromFileSync('/path/to/file', options)) // sync
+console.log(sha512sum.fromFileSync('/path/to/file', options))
 ```
 Similar to linux command:
 
-    $ sha512sum 992 ... 80a /path/to/file
+    $ sha512sum /path/to/file
   
  > For a directory
 
@@ -52,7 +52,7 @@ sha512sum.fromDirectory('/path/to/dir', options, function(err, hash) {
   console.log(hash)
 });
 
-console.log(sha512sum.fromDirectorySync('/path/to/dir', options)) // sync
+console.log(sha512sum.fromDirectorySync('/path/to/dir', options))
 ```
 
 Similar to linux command:
