@@ -68,7 +68,7 @@ Similar to linux command:
 
 [MIT](LICENSE) © [Léo Lozach](https://github.com/Leelow)
 
-[downloads-image]: https://img.shields.io/npm/dt/object-reader.svg?maxAge=3600
+[downloads-image]: https://img.shields.io/npm/dt/sha512sum.svg?maxAge=3600
 [downloads-url]: https://www.npmjs.com/package/sha512sum
 [travis-image]: https://travis-ci.org/Leelow/sha512sum.svg?branch=master
 [travis-url]: https://travis-ci.org/Leelow/osha512sum
