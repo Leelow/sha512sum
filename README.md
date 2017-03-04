@@ -1,3 +1,4 @@
+# sha512sum
 [![NPM downloads][downloads-image]][downloads-url]
 [![Build Status][travis-image]][travis-url]
 [![Build Status][appveyor-image]][appveyor-url]
@@ -7,7 +8,6 @@
 [![Dev-dependencies][dev-dependencies-image]][dev-dependencies-url]
 [![JavaScript Style Guide][javascript-standard-image]][javascript-standard-url]
 
-# sha512sum
 > The same behaviour as linux command with directories support. [https://linux.die.net/man/1/sha512sum](https://linux.die.net/man/1/sha512sum)
 
 Works on Linux and Windows.
