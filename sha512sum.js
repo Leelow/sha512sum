@@ -18,22 +18,22 @@ function computeExtendedHash (file, stat, options, callback) {
   hasha.fromFile(file, hashaOptions)
     .catch(callback)
     .then(function (res) {
-      var slashed = normPath(file, options)
+      var normed = normPath(file, options)
       var hash = {
-        depth: (slashed.match(/\//g) || []).length,
+        depth: (normed.match(/\/|\\/g) || []).length,
         fname: stat.name,
-        value: res + options.sep + slashed
+        value: res + options.sep + normed
       }
       callback(null, hash)
     })
 }
 
 function computeExtendedHashSync (file, stat, options) {
-  var slashed = normPath(file, options)
+  var normed = normPath(file, options)
   return {
-    depth: (slashed.match(/\//g) || []).length,
+    depth: (normed.match(/\/|\\/g) || []).length,
     fname: stat.name,
-    value: hasha.fromFileSync(file, hashaOptions) + options.sep + slashed
+    value: hasha.fromFileSync(file, hashaOptions) + options.sep + normed
   }
 }
 
