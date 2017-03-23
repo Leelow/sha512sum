@@ -71,7 +71,7 @@ Similar to linux command:
 [downloads-image]: https://img.shields.io/npm/dt/sha512sum.svg?maxAge=3600
 [downloads-url]: https://www.npmjs.com/package/sha512sum
 [travis-image]: https://travis-ci.org/Leelow/sha512sum.svg?branch=master
-[travis-url]: https://travis-ci.org/Leelow/osha512sum
+[travis-url]: https://travis-ci.org/Leelow/sha512sum
 [appveyor-image]: https://ci.appveyor.com/api/projects/status/ltppe1sp0ucnm6r3?svg=true
 [appveyor-url]: https://ci.appveyor.com/project/Leelow/sha512sum
 [codacy-coverage-image]: https://api.codacy.com/project/badge/Coverage/32e42e7d81a343e1a9ea01326ca74a40
