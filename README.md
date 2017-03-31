@@ -1,4 +1,6 @@
 # sha512sum
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/Leelow/sha512sum.svg)](https://greenkeeper.io/)
 [![NPM downloads][downloads-image]][downloads-url]
 [![Build Status][travis-image]][travis-url]
 [![Build Status][appveyor-image]][appveyor-url]
