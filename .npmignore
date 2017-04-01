@@ -5,12 +5,9 @@ npm-debug.log
 .appveyor.yml
 .travis.yml
 
-/.idea
+.idea
 sha512sum.iml
 
-/coverage
+test
+coverage
 yolo.js
-
-README.md
-yarn.lock
-/test

@@ -1,6 +1,6 @@
 {
   "name": "sha512sum",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": {
     "name": "Leo Lozach",
     "email": "leo.lozach@gmail.com",
@@ -35,5 +35,10 @@
   "bugs": {
     "url": "https://github.com/Leelow/sha512sum/issues"
   },
-  "homepage": "https://github.com/Leelow/sha512sum#readme"
+  "homepage": "https://github.com/Leelow/sha512sum#readme",
+  "keywords": [
+    "sha512",
+    "checksum",
+    "checksums"
+  ]
 }
