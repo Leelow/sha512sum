@@ -1,6 +1,6 @@
 {
   "name": "sha512sum",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": {
     "name": "Leo Lozach",
     "email": "leo.lozach@gmail.com",
@@ -9,7 +9,6 @@
   "license": "MIT",
   "main": "sha512sum.js",
   "scripts": {
-    "prepublish": "npm test",
     "test": "standard && node \"./node_modules/mocha/bin/_mocha\" --timeout 500 --recursive -R spec ./test",
     "coverage": "standard && \"./node_modules/.bin/istanbul\" cover ./node_modules/mocha/bin/_mocha -- --timeout 500 --recursive -R spec ./test",
     "codacy": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage"
