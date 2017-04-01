@@ -1,6 +1,7 @@
 # sha512sum
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/Leelow/sha512sum.svg)](https://greenkeeper.io/)
+[![npm version][npm-version-image]][npm-version-url]
 [![NPM downloads][downloads-image]][downloads-url]
 [![Build Status][travis-image]][travis-url]
 [![Build Status][appveyor-image]][appveyor-url]
@@ -72,6 +73,8 @@ Similar to linux command:
 
 [downloads-image]: https://img.shields.io/npm/dt/sha512sum.svg?maxAge=3600
 [downloads-url]: https://www.npmjs.com/package/sha512sum
+[npm-version-image]: https://badge.fury.io/js/sha512sum.svg
+[npm-version-url]: https://www.npmjs.com/package/sha512sum
 [travis-image]: https://travis-ci.org/Leelow/sha512sum.svg?branch=master
 [travis-url]: https://travis-ci.org/Leelow/sha512sum
 [appveyor-image]: https://ci.appveyor.com/api/projects/status/ltppe1sp0ucnm6r3?svg=true
