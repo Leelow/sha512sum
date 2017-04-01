@@ -1,6 +1,7 @@
 {
   "name": "sha512sum",
-  "version": "1.0.4",
+  "version": "1.0.5",
+  "description": "The same behaviour as linux command with directories support.",
   "author": {
     "name": "Leo Lozach",
     "email": "leo.lozach@gmail.com",
