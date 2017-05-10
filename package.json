@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "defaults": "^1.0.3",
-    "hasha": "^2.2.0",
+    "hasha": "^3.0.0",
     "slash": "^1.0.0",
     "walk": "^2.3.9"
   },
