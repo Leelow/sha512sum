@@ -1,7 +1,7 @@
 /* eslint-env mocha */
 
 const path = require('path')
-const assert = require('chai').assert
+const assert = require('assert')
 const sha512sum = require('../sha512sum.js')
 const shas = require('./files/hash.sha512.json')
 

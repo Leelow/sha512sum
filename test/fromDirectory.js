@@ -1,7 +1,7 @@
 /* eslint-env mocha */
 
 const path = require('path')
-const assert = require('chai').assert
+const assert = require('assert')
 const sha512sum = require('../sha512sum.js')
 const shas = require('./files/hash.sha512.json')
 
@@ -17,7 +17,7 @@ describe('fromDirectorySync', function () {
   it('should return the corresponding hash', function (done) {
     var shaPath = path.join(__dirname, 'files/dir')
     sha512sum.fromDirectory(shaPath, function (err, res) {
-      if (err) return done(err)
+      assert.equal(err, null)
       assert.equal(res, computeHashFile('  ', shaPath))
       done()
     })
@@ -26,7 +26,7 @@ describe('fromDirectorySync', function () {
   it('should return the corresponding hash with cwd options', function (done) {
     var shaPath = path.join(__dirname, 'files/dir')
     sha512sum.fromDirectory(shaPath, {cwd: shasCwd}, function (err, res) {
-      if (err) return done(err)
+      assert.equal(err, null)
       assert.equal(res, computeHashFile('  '))
       done()
     })
@@ -35,7 +35,7 @@ describe('fromDirectorySync', function () {
   it('should return the corresponding hash with custom separator', function (done) {
     var shaPath = path.join(__dirname, 'files/dir')
     sha512sum.fromDirectory(shaPath, {cwd: shasCwd, sep: '|'}, function (err, res) {
-      if (err) return done(err)
+      assert.equal(err, null)
       assert.equal(res, computeHashFile('|'))
       done()
     })
