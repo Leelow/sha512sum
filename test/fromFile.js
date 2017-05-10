@@ -2,7 +2,7 @@
 
 const path = require('path')
 const async = require('async')
-const assert = require('chai').assert
+const assert = require('assert')
 const sha512sum = require('../sha512sum.js')
 const shas = require('./files/hash.sha512.json')
 
@@ -13,7 +13,7 @@ describe('fromFile', function () {
     async.each(shas, function (sha, next) {
       var shaPath = path.join(__dirname, 'files/dir', sha[0])
       sha512sum.fromFile(shaPath, function (err, res) {
-        if (err) return next(err)
+        assert.equal(err, null)
         assert.equal(res, sha[1] + '  ' + shaPath)
         next()
       })
@@ -24,7 +24,7 @@ describe('fromFile', function () {
     async.each(shas, function (sha, next) {
       var shaPath = path.join(__dirname, 'files/dir', sha[0])
       sha512sum.fromFile(shaPath, {cwd: shasCwd}, function (err, res) {
-        if (err) return next(err)
+        assert.equal(err, null)
         assert.equal(res, sha[1] + '  ' + sha[0])
         next()
       })
@@ -35,7 +35,7 @@ describe('fromFile', function () {
     async.each(shas, function (sha, next) {
       var shaPath = path.join(__dirname, 'files/dir', sha[0])
       sha512sum.fromFile(shaPath, {cwd: shasCwd, sep: '|'}, function (err, res) {
-        if (err) return next(err)
+        assert.equal(err, null)
         assert.equal(res, sha[1] + '|' + sha[0])
         next()
       })
