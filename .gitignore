@@ -1,8 +1,8 @@
-/node_modules
+node_modules
 npm-debug.log
+yarn-error.log
 
-/.idea
+coverage
+
+.idea
 sha512sum.iml
-
-/coverage
-yolo.js

@@ -1,13 +1,14 @@
-/node_modules
+node_modules
 npm-debug.log
+yarn-error.log
+
+coverage
 
 .gitignore
 .appveyor.yml
 .travis.yml
 
+test
+
 .idea
 sha512sum.iml
-
-test
-coverage
-yolo.js

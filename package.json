@@ -1,6 +1,6 @@
 {
   "name": "sha512sum",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "The same behaviour as linux command with directories support.",
   "author": {
     "name": "Leo Lozach",
@@ -21,10 +21,10 @@
     "walk": "^2.3.9"
   },
   "devDependencies": {
-    "async": "^2.4.0",
+    "async": "^2.5.0",
     "codacy-coverage": "^2.0.2",
     "istanbul": "^0.4.5",
-    "mocha": "^3.3.0",
+    "mocha": "^3.4.2",
     "standard": "^10.0.2"
   },
   "repository": {
