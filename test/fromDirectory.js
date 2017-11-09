@@ -1,8 +1,6 @@
-/* eslint-env mocha */
-
+const test = require('ava')
 const path = require('path')
-const assert = require('assert')
-const sha512sum = require('../sha512sum.js')
+const sha512sum = require('..')
 const shas = require('./files/hash.sha512.json')
 
 const shasCwd = path.join(__dirname, './files/dir')
@@ -13,31 +11,29 @@ function computeHashFile (sep, root) {
   }).join('\n')
 }
 
-describe('fromDirectorySync', function () {
-  it('should return the corresponding hash', function (done) {
-    var shaPath = path.join(__dirname, 'files/dir')
-    sha512sum.fromDirectory(shaPath, function (err, res) {
-      assert.equal(err, null)
-      assert.equal(res, computeHashFile('  ', shaPath))
-      done()
-    })
+test.cb('should return the corresponding hash', function (t) {
+  const shaPath = path.join(__dirname, 'files/dir')
+  sha512sum.fromDirectory(shaPath, function (err, res) {
+    t.is(err, null)
+    t.is(res, computeHashFile('  ', shaPath))
+    t.end()
   })
+})
 
-  it('should return the corresponding hash with cwd options', function (done) {
-    var shaPath = path.join(__dirname, 'files/dir')
-    sha512sum.fromDirectory(shaPath, {cwd: shasCwd}, function (err, res) {
-      assert.equal(err, null)
-      assert.equal(res, computeHashFile('  '))
-      done()
-    })
+test.cb('should return the corresponding hash with cwd options', function (t) {
+  const shaPath = path.join(__dirname, 'files/dir')
+  sha512sum.fromDirectory(shaPath, {cwd: shasCwd}, function (err, res) {
+    t.is(err, null)
+    t.is(res, computeHashFile('  '))
+    t.end()
   })
+})
 
-  it('should return the corresponding hash with custom separator', function (done) {
-    var shaPath = path.join(__dirname, 'files/dir')
-    sha512sum.fromDirectory(shaPath, {cwd: shasCwd, sep: '|'}, function (err, res) {
-      assert.equal(err, null)
-      assert.equal(res, computeHashFile('|'))
-      done()
-    })
+test.cb('should return the corresponding hash with custom separator', function (t) {
+  const shaPath = path.join(__dirname, 'files/dir')
+  sha512sum.fromDirectory(shaPath, {cwd: shasCwd, sep: '|'}, function (err, res) {
+    t.is(err, null)
+    t.is(res, computeHashFile('|'))
+    t.end()
   })
 })

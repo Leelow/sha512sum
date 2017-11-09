@@ -1,8 +1,9 @@
 node_modules
 npm-debug.log
-yarn-error.log
 
+.nyc_output
 coverage
 
+crap
 .idea
 sha512sum.iml

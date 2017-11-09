@@ -36,7 +36,7 @@ console.log(sha512sum.fromFileSync('/path/to/file', options))
 Similar to linux command:
 
     $ sha512sum /path/to/file
-  
+
  > For a directory
 
 ```js
@@ -61,8 +61,8 @@ Similar to linux command:
 
 ## Options
 
-* cwd: current work directory
-* sep: separator between hash and filename, default value is double-space
+* `cwd`: current work directory
+* `sep`: separator between hash and filename, default value is double-space
 
 ## License
 

@@ -1,12 +1,10 @@
 language: node_js
 node_js:
-  - "7"
+  - "8"
   - "6"
-  - "5"
   - "4"
 os:
   - linux
   - osx
 after_success:
-  - yarn run coverage
-  - yarn run codacy
+  - npm run coveralls
