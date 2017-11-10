@@ -3,7 +3,7 @@
 [![npm version][npm-version-image]][npm-version-url]
 [![Build Status][travis-image]][travis-url]
 [![Build Status][appveyor-image]][appveyor-url]
-[![Coverage][codacy-coverage-image]][codacy-coverage-url]
+[![Coverage][coveralls-image]][coveralls-url]
 [![JavaScript Style Guide][javascript-standard-image]][javascript-standard-url]
 
 > The same behaviour as linux command with directories support. [https://linux.die.net/man/1/sha512sum](https://linux.die.net/man/1/sha512sum)
@@ -72,5 +72,7 @@ Similar to linux command:
 [travis-url]: https://travis-ci.org/Leelow/sha512sum
 [appveyor-image]: https://ci.appveyor.com/api/projects/status/ltppe1sp0ucnm6r3?svg=true
 [appveyor-url]: https://ci.appveyor.com/project/Leelow/sha512sum
+[coveralls-image]: https://coveralls.io/repos/github/Leelow/sha512sum/badge.svg?branch=master
+[coveralls-url]: https://coveralls.io/github/Leelow/sha512sum?branch=master
 [javascript-standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg
 [javascript-standard-url]: http://standardjs.com/
