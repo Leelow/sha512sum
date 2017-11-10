@@ -11,7 +11,7 @@
   "main": "index.js",
   "scripts": {
     "test": "standard && ava",
-    "coverage": "nyc --reporter=html --reporter=text ava",
+    "coverage": "standard && nyc --reporter=html --reporter=text ava",
     "coveralls": "npm run coverage | coveralls"
   },
   "engines": {

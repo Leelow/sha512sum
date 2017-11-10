@@ -7,4 +7,6 @@ os:
   - linux
   - osx
 after_success:
+  - node --version
+  - npm --version
   - npm run coveralls
