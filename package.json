@@ -1,6 +1,6 @@
 {
   "name": "sha512sum",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "The same behaviour as linux command with directories support.",
   "author": {
     "name": "Leo Lozach",
@@ -8,11 +8,14 @@
     "url": "https://github.com/Leelow"
   },
   "license": "MIT",
-  "main": "sha512sum.js",
+  "main": "index.js",
   "scripts": {
-    "test": "standard && node \"./node_modules/mocha/bin/_mocha\" --timeout 1000 --recursive -R spec ./test",
-    "coverage": "standard && \"./node_modules/.bin/istanbul\" cover ./node_modules/mocha/bin/_mocha -- --timeout 1000 --recursive -R spec ./test",
-    "codacy": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage"
+    "test": "standard && ava",
+    "coverage": "standard && nyc --reporter=html --reporter=text ava",
+    "coveralls": "npm run coverage | coveralls"
+  },
+  "engines": {
+    "node": ">=4"
   },
   "dependencies": {
     "defaults": "^1.0.3",
@@ -22,9 +25,9 @@
   },
   "devDependencies": {
     "async": "^2.5.0",
-    "codacy-coverage": "^2.0.2",
-    "istanbul": "^0.4.5",
-    "mocha": "^4.0.0",
+    "ava": "^0.23.0",
+    "coveralls": "^3.0.0",
+    "nyc": "^11.3.0",
     "standard": "^10.0.2"
   },
   "repository": {

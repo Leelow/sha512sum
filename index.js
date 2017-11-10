@@ -1,25 +1,22 @@
 const path = require('path')
 const hasha = require('hasha')
 const slash = require('slash')
-const defaults = require('defaults')
 const walker = require('walk')
+const defaults = require('defaults')
 
 const hashaOptions = {algorithm: 'sha512'}
-const defaultOptions = {
-  sep: '  '
-}
+const defaultOptions = {sep: '  '}
 
-function normPath (file, options) {
-  if (options.cwd) return slash(path.relative(options.cwd, file))
-  else return file
+function normPath (cwd, file) {
+  return slash(path.relative(cwd, file))
 }
 
 function computeExtendedHash (file, stat, options, callback) {
   hasha.fromFile(file, hashaOptions)
     .catch(callback)
     .then(function (res) {
-      var normed = normPath(file, options)
-      var hash = {
+      const normed = options.cwd ? normPath(options.cwd, file) : file
+      const hash = {
         depth: (normed.match(/\/|\\/g) || []).length,
         fname: stat.name,
         value: res + options.sep + normed
@@ -29,7 +26,7 @@ function computeExtendedHash (file, stat, options, callback) {
 }
 
 function computeExtendedHashSync (file, stat, options) {
-  var normed = normPath(file, options)
+  const normed = options.cwd ? normPath(options.cwd, file) : file
   return {
     depth: (normed.match(/\/|\\/g) || []).length,
     fname: stat.name,
@@ -51,16 +48,14 @@ function sortExtendedHashes (hashes) {
  * @param callback
  */
 module.exports.fromFile = function (file, options, callback) {
-  var isCallback = callback
-  callback = callback || options
-  options = isCallback ? options : {}
-
+  if (typeof callback === 'undefined') callback = options
   options = defaults(options, defaultOptions)
 
   hasha.fromFile(file, hashaOptions)
     .catch(callback)
     .then(function (hash) {
-      callback(null, hash + options.sep + normPath(file, options))
+      file = options.cwd ? normPath(options.cwd, file) : file
+      callback(null, hash + options.sep + file)
     })
 }
 
@@ -72,7 +67,9 @@ module.exports.fromFile = function (file, options, callback) {
  */
 module.exports.fromFileSync = function (file, options) {
   options = defaults(options, defaultOptions)
-  return hasha.fromFileSync(file, hashaOptions) + options.sep + normPath(file, options)
+  const hash = hasha.fromFileSync(file, hashaOptions)
+  file = options.cwd ? normPath(options.cwd, file) : file
+  return hash + options.sep + file
 }
 
 /**
@@ -82,14 +79,15 @@ module.exports.fromFileSync = function (file, options) {
  * @param callback
  */
 module.exports.fromDirectory = function (directory, options, callback) {
-  callback = callback || options
+  if (typeof callback === 'undefined') callback = options
   options = defaults(options, defaultOptions)
-  var hashes = []
+
+  const hashes = []
 
   walker.walk(directory)
     .on('errors', callback)
     .on('file', function (root, stat, next) {
-      var file = path.normalize(path.join(root, stat.name))
+      const file = path.normalize(path.join(root, stat.name))
       computeExtendedHash(file, stat, options, function (err, hash) {
         if (err) return callback(err)
         hashes.push(hash)
@@ -97,7 +95,7 @@ module.exports.fromDirectory = function (directory, options, callback) {
       })
     })
     .on('end', function () {
-      var res = sortExtendedHashes(hashes).map(function (hash) {
+      const res = sortExtendedHashes(hashes).map(function (hash) {
         return hash.value
       }).join('\n')
       return callback(null, res)
@@ -112,12 +110,12 @@ module.exports.fromDirectory = function (directory, options, callback) {
  */
 module.exports.fromDirectorySync = function (directory, options) {
   options = defaults(options, defaultOptions)
-  var hashes = []
+  const hashes = []
 
-  var walkerOptions = {
+  const walkerOptions = {
     listeners: {
       file: function (root, stat, next) {
-        var file = path.normalize(path.join(root, stat.name))
+        const file = path.normalize(path.join(root, stat.name))
         hashes.push(computeExtendedHashSync(file, stat, options))
         next()
       },

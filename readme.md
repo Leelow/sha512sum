@@ -1,11 +1,9 @@
 # sha512sum
 
 [![npm version][npm-version-image]][npm-version-url]
-[![NPM downloads][downloads-image]][downloads-url]
 [![Build Status][travis-image]][travis-url]
 [![Build Status][appveyor-image]][appveyor-url]
-[![Codacy Coverage][codacy-coverage-image]][codacy-coverage-url]
-[![Codacy Grade][codacy-grade-image]][codacy-grade-url]
+[![Coverage][coveralls-image]][coveralls-url]
 [![JavaScript Style Guide][javascript-standard-image]][javascript-standard-url]
 
 > The same behaviour as linux command with directories support. [https://linux.die.net/man/1/sha512sum](https://linux.die.net/man/1/sha512sum)
@@ -36,7 +34,7 @@ console.log(sha512sum.fromFileSync('/path/to/file', options))
 Similar to linux command:
 
     $ sha512sum /path/to/file
-  
+
  > For a directory
 
 ```js
@@ -61,24 +59,20 @@ Similar to linux command:
 
 ## Options
 
-* cwd: current work directory
-* sep: separator between hash and filename, default value is double-space
+* `cwd`: current work directory
+* `sep`: separator between hash and filename, default value is double-space
 
 ## License
 
 [MIT](LICENSE) © [Léo Lozach](https://github.com/Leelow)
 
-[downloads-image]: https://img.shields.io/npm/dt/sha512sum.svg?maxAge=3600
-[downloads-url]: https://www.npmjs.com/package/sha512sum
 [npm-version-image]: https://badge.fury.io/js/sha512sum.svg
 [npm-version-url]: https://www.npmjs.com/package/sha512sum
 [travis-image]: https://travis-ci.org/Leelow/sha512sum.svg?branch=master
 [travis-url]: https://travis-ci.org/Leelow/sha512sum
 [appveyor-image]: https://ci.appveyor.com/api/projects/status/ltppe1sp0ucnm6r3?svg=true
 [appveyor-url]: https://ci.appveyor.com/project/Leelow/sha512sum
-[codacy-coverage-image]: https://api.codacy.com/project/badge/Coverage/32e42e7d81a343e1a9ea01326ca74a40
-[codacy-coverage-url]: https://www.codacy.com/app/Leelow/sha512sum?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Leelow/sha512sum&amp;utm_campaign=Badge_Coverage
-[codacy-grade-image]: https://api.codacy.com/project/badge/Grade/32e42e7d81a343e1a9ea01326ca74a40
-[codacy-grade-url]: https://www.codacy.com/app/Leelow/sha512sum?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Leelow/sha512sum&amp;utm_campaign=Badge_Grade
+[coveralls-image]: https://coveralls.io/repos/github/Leelow/sha512sum/badge.svg?branch=master
+[coveralls-url]: https://coveralls.io/github/Leelow/sha512sum?branch=master
 [javascript-standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg
 [javascript-standard-url]: http://standardjs.com/
